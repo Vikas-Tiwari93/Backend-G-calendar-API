@@ -43,5 +43,7 @@ export const insertEvent = async (event) => {
 // change date format
 export function formatToRFC3339(dateString) {
   const dateObject = new Date(dateString);
+  dateObject.setHours(dateObject.getHours() + 5);
+  dateObject.setMinutes(dateObject.getMinutes() + 30);
   return dateObject.toISOString();
 }
